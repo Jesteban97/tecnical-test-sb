@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  java_app:
+    container_name: java_app
+    image: public.ecr.aws/c9m4p7f8/tecnical-test:latest  # Usa la imagen local llamada tecnical-test:latest
+    build: .
+    ports:
+      - 8081:8081
+    environment:
+      - DATABASE_URL=jdbc:sqlserver://;serverName=proyectointegrador1.database.windows.net;databaseName=test-wallet
+      - DATABASE_USERNAME=project-admin@proyectointegrador1
+      - DATABASE_PASSWORD=proyectoIntegrador1
+
